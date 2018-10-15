@@ -131,6 +131,22 @@ class Datatable extends React.Component {
 
     return (
       <Row>
+        <Col xs={12}>
+          <Table className={tableClass}>
+            <TableHeader
+              tableHeader={tableHeader}
+              keyName={keyName}
+              sortedProp={sortedProp}
+              onSortChange={this.onSortChange}
+            />
+            <TableBody
+              tableHeader={tableHeader}
+              keyName={keyName}
+              labels={labels}
+              paginatedData={paginatedData}
+            />
+          </Table>
+        </Col>
         <Col xs={12} md={4}>
           <Filter
             tableHeader={tableHeader}
@@ -157,22 +173,6 @@ class Datatable extends React.Component {
             onPageNavigate={this.onPageNavigate}
             labels={labels}
           />
-        </Col>
-        <Col xs={12}>
-          <Table className={tableClass}>
-            <TableHeader
-              tableHeader={tableHeader}
-              keyName={keyName}
-              sortedProp={sortedProp}
-              onSortChange={this.onSortChange}
-            />
-            <TableBody
-              tableHeader={tableHeader}
-              keyName={keyName}
-              labels={labels}
-              paginatedData={paginatedData}
-            />
-          </Table>
         </Col>
       </Row>
     );
